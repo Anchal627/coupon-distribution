@@ -1,3 +1,87 @@
+# Coupon Distribution System
+
+A round-robin coupon distribution system with abuse prevention mechanisms.
+
+## Features
+
+- Sequential coupon distribution
+- IP-based claim tracking
+- Browser-based claim tracking
+- Rate limiting (1 claim per hour)
+- Real-time feedback
+- Beautiful, responsive UI
+
+## Tech Stack
+
+- Frontend: React, JavaScript, Tailwind CSS
+- Backend: Node.js, Express
+- Database: MongoDB
+- Additional: Rate limiting, Transaction support
+
+## Setup Instructions
+
+1. Install dependencies:
+
+   ```bash
+   # Frontend
+   npm install
+
+   # Backend
+   cd server
+   npm install
+   ```
+
+2. Set up MongoDB:
+
+   - Install MongoDB locally or use MongoDB Atlas
+   - Update the `MONGODB_URI` in `server/.env`
+
+3. Start the development servers:
+
+   ```bash
+   # Backend (in server directory)
+   npm run dev
+
+   # Frontend (in root directory)
+   npm run dev
+   ```
+
+## Abuse Prevention Strategies
+
+1. IP Address Tracking
+
+   - Records IP address for each claim
+   - Prevents multiple claims from same IP within 1 hour
+
+2. Browser Tracking
+
+   - Uses browser ID stored in localStorage
+   - Prevents multiple claims from same browser within 1 hour
+
+3. Rate Limiting
+
+   - Express rate limiter middleware
+   - Limits API requests to 1 per hour per IP
+
+4. Transaction Safety
+   - Uses MongoDB transactions
+   - Ensures atomic operations for claim process
+   - Prevents race conditions
+
+## API Endpoints
+
+- GET `/api/coupons/next`: Get next available coupon
+- POST `/api/coupons/claim/:id`: Claim a specific coupon
+
+## Security Considerations
+
+- Rate limiting on sensitive endpoints
+- IP and browser tracking
+- Atomic transactions
+- Input validation
+- Error handling
+- No sensitive data exposure
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
