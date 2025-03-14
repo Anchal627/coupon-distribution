@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/coupon";
 // Middleware
 const corsOptions = {
-  origin: "http://localhost:3000", // Specify the allowed origin
+  origin: "https://coupon-distribution-6e31.onrender.com/", // Specify the allowed origin
   credentials: true, // Allow cookies and authentication headers
   methods: ["GET", "POST"],
 };
