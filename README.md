@@ -20,7 +20,7 @@ Frontend Link: https://coupon-distribution-snowy.vercel.app/
 - Frontend: React, JavaScript, Tailwind CSS
 - Backend: Node.js, Express
 - Database: MongoDB
-- Additional: Rate limiting, Transaction support
+- Additional: Rate limiting
 
 ## Setup Instructions
 
