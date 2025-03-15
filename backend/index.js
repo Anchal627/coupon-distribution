@@ -1,13 +1,16 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import dotenv from "dotenv";
+
 import rateLimit from "express-rate-limit";
 import { couponRoutes } from "./routes/couponRoute.js";
-dotenv.config();
+import dotenv from "dotenv";
+import path from "path";
+dotenv.config({ path: path.resolve(".env") });
 const app = express();
 const PORT = process.env.PORT || 10000;
 const MONGO_URI = process.env.MONGODB_URI;
+console.log(MONGO_URI);
 // Middleware
 app.use(cors({ origin: "*" }));
 app.use(express.json());
