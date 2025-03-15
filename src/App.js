@@ -17,7 +17,7 @@ const App = () => {
   const fetchNextCoupon = async () => {
     try {
       const response = await fetch(
-        "https://coupon-distribution-t7cz.onrender.com/api/coupons/next"
+        "https://coupon-distribution-pemp.onrender.com/api/coupons/next"
       );
       const data = await response.json();
       if (response.ok) {
@@ -55,7 +55,7 @@ const App = () => {
         localStorage.getItem("browserId") || generateBrowserId();
 
       const response = await fetch(
-        `https://coupon-distribution-t7cz.onrender.com/api/coupons/claim/${nextCoupon._id}`,
+        `https://coupon-distribution-pemp.onrender.com/api/coupons/claim/${nextCoupon._id}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
