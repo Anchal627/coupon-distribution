@@ -6,8 +6,8 @@ import rateLimit from "express-rate-limit";
 import { couponRoutes } from "./routes/couponRoute.js";
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/coupon";
+const PORT = process.env.PORT || 10000;
+const MONGO_URI = process.env.MONGODB_URI;
 // Middleware
 app.use(cors({ origin: "*" }));
 app.use(express.json());
