@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/coupon";
 // Middleware
-app.use(cors({ origin: "https://coupon-distribution-six.vercel.app/" }));
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 // Rate limiting
 const limiter = rateLimit({
